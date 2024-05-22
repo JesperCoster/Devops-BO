@@ -40,6 +40,13 @@ public class HelloController {
     @Autowired
     private PersonService db;
     //TODO Update view and controller to check credentials
+
+    @PostMapping("/")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<?> helloWorld()
+            throws JsonProcessingException {
+        return ResponseEntity.ok("200");
+    }
     @PostMapping("/")
     @CrossOrigin(origins = "*")
     public ResponseEntity<?> helloWorld(@RequestBody Identity credentials,
